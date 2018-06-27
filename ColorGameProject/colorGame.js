@@ -15,8 +15,7 @@ init();
 function init(){
 	setupModeButtons();
 	setupSquares();
-	reset();  // will select colors, pick the pickedColor, color the squares
-}
+	reset();  
 
 function setupModeButtons(){
 	for(var i = 0; i < modeButtons.length; i++){
@@ -84,7 +83,6 @@ function changeColor(color) {
 }
 
 function pickColor() {
-	// Math.random() returns random numbers between 0 and 1(not including 1), * colors.length will increase that range to 0 - colors.length
 	var random = Math.floor(Math.random() * colors.length); // therefore 0 to 5
 	return colors[random]; 
 }
@@ -103,7 +101,7 @@ function generateRandomColors(num) {  // num -> number of colors to generate in 
 
 function randomColor() {
 	// pick a "red" from 0-255
-	var r = Math.floor(Math.random() * 256);  // * 256, as it will produce numbers from 0-255.999... and Math.floor makes it 0-255
+	var r = Math.floor(Math.random() * 256);  
 	// pick a "green" from 0-255
 	var g = Math.floor(Math.random() * 256);
 	// pick a "blue" from 0-255
